@@ -1,0 +1,75 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sales_imporpalac
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-21 16:53+0000\n"
+"PO-Revision-Date: 2022-07-21 16:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_imporpalac
+#: model_terms:ir.ui.view,arch_db:sales_imporpalac.view_stock_piching_form_inherit_sales_imporpalac
+msgid "Confirm and invoice"
+msgstr "Confirmar y facturar"
+
+#. module: sales_imporpalac
+#: model_terms:ir.ui.view,arch_db:sales_imporpalac.view_order_form_inherit_sales_imporpalac
+msgid "Confirm and pay"
+msgstr "Confirmar y pagar"
+
+#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order__display_name
+#: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre "
+
+#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order__id
+#: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order____last_update
+#: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: sales_imporpalac
+#: code:addons/sales_imporpalac/models/stock_picking_imporpalac.py:0
+#: code:addons/sales_imporpalac/sales_imporpalac/models/stock_picking_imporpalac.py:0
+#, python-format
+msgid "No payment found for this customer"
+msgstr "No se encontró ningún pago para este cliente"
+
+#. module: sales_imporpalac
+#: model:ir.actions.report,name:sales_imporpalac.report_payment
+msgid "Payment report"
+msgstr "Informe de pago"
+
+#. module: sales_imporpalac
+#: code:addons/sales_imporpalac/models/sales_imporpalac.py:0
+#: code:addons/sales_imporpalac/models/stock_picking_imporpalac.py:0
+#: code:addons/sales_imporpalac/sales_imporpalac/models/sales_imporpalac.py:0
+#: code:addons/sales_imporpalac/sales_imporpalac/models/stock_picking_imporpalac.py:0
+#, python-format
+msgid "Quantities are not available for product %s"
+msgstr "Las cantidades no están disponibles para el producto %s"
+
+#. module: sales_imporpalac
+#: model:ir.model,name:sales_imporpalac.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sales_imporpalac
+#: model:ir.model,name:sales_imporpalac.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
