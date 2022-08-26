@@ -17,7 +17,16 @@ Development of customized modules to solve the commercial flow of Imporpalac
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[inventory_turnover_report](inventory_turnover_report/) | 14.0.1.0.0 |  | Analize inventory turnover
+[price_list_imporpalac](price_list_imporpalac/) | 14.0.1.0.0 |  | This module add price list for each order line
+[quick_sales](quick_sales/) | 14.0.1.0.0 |  | Quick sales for counter sales
+[receipt_product_imporpalac](receipt_product_imporpalac/) | 14.0.1.0.0 |  | Extra column in the receipt of products in which the sale price can be updated
+[sales_imporpalac](sales_imporpalac/) | 14.0.1.0.0 |  | This module contains the sales flow that IMPORPALAC requires
+[search_products_imporpalac](search_products_imporpalac/) | 14.0.1.0.0 |  | Assistant to show the products, their warehouses, available quantities and price list if they have one.
 
 [//]: # (end addons)
 
@@ -27,7 +36,7 @@ This part will be replaced when running the oca-gen-addons-table script from OCA
 
 This repository is licensed under [AGPL-3.0](LICENSE).
 
-However, each module can have a totally different license, as long as they adhere to Fenix-ERP
+However, each module can have a totally different license, as long as they adhere to Fenix ERP
 policy. Consult each module's `__manifest__.py` file, which contains a `license` key
 that explains its license.
 
