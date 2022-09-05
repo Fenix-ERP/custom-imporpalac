@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-21 16:53+0000\n"
-"PO-Revision-Date: 2022-07-21 16:53+0000\n"
+"POT-Creation-Date: 2022-09-05 22:27+0000\n"
+"PO-Revision-Date: 2022-09-05 22:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,60 +16,73 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sales_imporpalac
+#: model_terms:ir.ui.view,arch_db:sales_imporpalac.view_order_form_inherit_sales_imporpalac
+msgid "Confirm and generate payment"
+msgstr ""
+
+#. module: sales_imporpalac
 #: model_terms:ir.ui.view,arch_db:sales_imporpalac.view_stock_piching_form_inherit_sales_imporpalac
 msgid "Confirm and invoice"
-msgstr "Confirmar y facturar"
+msgstr ""
 
 #. module: sales_imporpalac
-#: model_terms:ir.ui.view,arch_db:sales_imporpalac.view_order_form_inherit_sales_imporpalac
-msgid "Confirm and pay"
-msgstr "Confirmar y pagar"
-
-#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_account_payment__display_name
 #: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order__display_name
 #: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking__display_name
 msgid "Display Name"
-msgstr "Mostrar Nombre "
+msgstr ""
 
 #. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_account_payment__id
 #: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order__id
 #: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_account_payment____last_update
 #: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order____last_update
 #: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr ""
 
 #. module: sales_imporpalac
-#: code:addons/sales_imporpalac/models/stock_picking_imporpalac.py:0
-#: code:addons/sales_imporpalac/sales_imporpalac/models/stock_picking_imporpalac.py:0
-#, python-format
-msgid "No payment found for this customer"
-msgstr "No se encontró ningún pago para este cliente"
+#: model_terms:ir.ui.view,arch_db:sales_imporpalac.view_order_form_inherit_sales_imporpalac
+msgid "Payment"
+msgstr ""
 
 #. module: sales_imporpalac
 #: model:ir.actions.report,name:sales_imporpalac.report_payment
 msgid "Payment report"
-msgstr "Informe de pago"
+msgstr ""
 
 #. module: sales_imporpalac
-#: code:addons/sales_imporpalac/models/sales_imporpalac.py:0
-#: code:addons/sales_imporpalac/models/stock_picking_imporpalac.py:0
-#: code:addons/sales_imporpalac/sales_imporpalac/models/sales_imporpalac.py:0
-#: code:addons/sales_imporpalac/sales_imporpalac/models/stock_picking_imporpalac.py:0
-#, python-format
-msgid "Quantities are not available for product %s"
-msgstr "Las cantidades no están disponibles para el producto %s"
+#: model:ir.model,name:sales_imporpalac.model_account_payment
+#: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order__payment_ids
+msgid "Payments"
+msgstr ""
+
+#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_sale_order__payment_count
+msgid "Payments Orders"
+msgstr ""
+
+#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_account_payment__sale_order_id
+msgid "Sale Order"
+msgstr ""
 
 #. module: sales_imporpalac
 #: model:ir.model,name:sales_imporpalac.model_sale_order
 msgid "Sales Order"
-msgstr "Pedido de venta"
+msgstr ""
+
+#. module: sales_imporpalac
+#: model:ir.model.fields,field_description:sales_imporpalac.field_stock_picking__payment_exist
+msgid "There is a payment"
+msgstr ""
 
 #. module: sales_imporpalac
 #: model:ir.model,name:sales_imporpalac.model_stock_picking
 msgid "Transfer"
-msgstr "Albarán"
+msgstr ""

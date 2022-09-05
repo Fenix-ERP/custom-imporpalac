@@ -1,6 +1,4 @@
 14.0.1.0.0 (2022-07-10)
-~~~~~~~~~~~~~~~~~~~~~~~
-
 * [ADD] : Create and config module inventory turnover report.
 * [UPD] : Turnover report for all products.
 * [UPD] : Refactor and comment in function module.

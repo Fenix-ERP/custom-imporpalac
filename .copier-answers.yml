@@ -11,7 +11,7 @@ github_enable_stale_action: false
 github_enforce_dev_status_compatibility: true
 include_wkhtmltopdf: true
 odoo_version: 14.0
-org_name: Fenix-ERP
+org_name: FenixERP
 org_slug: Fenix-ERP
 rebel_module_groups: []
 repo_description: Development of customized modules to solve the commercial flow of

@@ -10,16 +10,17 @@ Receipt product Imporpalac
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/github-OCA%2Fimporpalac-lightgray.png?logo=github
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
+.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fimporpalac-lightgray.png?logo=github
     :target: https://github.com/OCA/imporpalac/tree/14.0/receipt_product_imporpalac
     :alt: OCA/imporpalac
-.. |badge3| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+.. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/imporpalac-14-0/imporpalac-14-0-receipt_product_imporpalac
     :alt: Translate me on Weblate
 
-|badge1| |badge2| |badge3| 
-
-[ This file must be max 2-3 paragraphs, and is required. ]
+|badge1| |badge2| |badge3| |badge4| 
 
 This module extends the functionality of stock.picking, allowing the sale price of a product to be modified when confirming the received order.
 
@@ -42,16 +43,7 @@ To install this module, you need to:
 Configuration
 =============
 
-[ This file is optional, it should explain how to configure
-  the module before using it; it is aimed at advanced users. ]
-
-To configure this module, you need to:
-
-#. Go to ...
-
-.. figure:: https://raw.githubusercontent.com/OCA/imporpalac/14.0/receipt_product_imporpalac/static/description/image.png
-   :alt: alternative description
-   :width: 600 px
+No additional configurations needed
 
 Usage
 =====
@@ -68,18 +60,12 @@ To use this module, you need to:
 Known issues / Roadmap
 ======================
 
-[ Enumerate known caveats and future potential improvements.
-  It is mostly intended for end-users, and can also help
-  potential new contributors discovering new features to implement. ]
-
 * Code optimization
 
 Changelog
 =========
 
 14.0.1.0.0 (2022-07-10)
-~~~~~~~~~~~~~~~~~~~~~~~
-
 * [ADD] : Module to select price list for each line of the sales order.
 
 Bug Tracker
@@ -104,17 +90,6 @@ Contributors
 ~~~~~~~~~~~~
 
 Bryan Sandoval <bryansandoval300@gmail.com>
-
-Other credits
-~~~~~~~~~~~~~
-
-[ This file is optional and contains additional credits, other than
-  authors, contributors, and maintainers. ]
-
-The development of this module has been financially supported by:
-
-* Company 1 name
-* Company 2 name
 
 Maintainers
 ~~~~~~~~~~~

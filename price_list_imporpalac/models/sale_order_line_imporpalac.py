@@ -11,7 +11,6 @@ class SaleOrderLine(models.Model):
         related="order_id.pricelist_id",
         readonly=True,
     )
-
     pricelist_line2_id = fields.Many2one(
         "product.pricelist",
         string="Pricelist Line",

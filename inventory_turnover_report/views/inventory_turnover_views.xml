@@ -129,12 +129,5 @@
             <field name="view_id" ref="inventory_turnover_view_form" />
         </record>
 
-        <menuitem
-            id="menu_inventory_turnover_report"
-            name="Inventory Turnover Report"
-            parent="stock.menu_warehouse_report"
-            action="inventory_turnover_report"
-            sequence="50"
-        />
     </data>
 </odoo>

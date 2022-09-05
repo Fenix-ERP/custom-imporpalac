@@ -4,6 +4,7 @@ from odoo import fields, models
 class InventoryTurnover(models.TransientModel):
     _name = "inventory.turnover"
     _description = "Turnover View"
+
     name = fields.Char(string="Name", default="Inventory Turnover Report")
     product_ids = fields.Many2many(comodel_name="product.product", string="Product")
     category_id = fields.Many2one(

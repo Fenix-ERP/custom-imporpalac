@@ -1,11 +1,11 @@
 {
     "name": "Sales Imporpalac",
-    "summary": "This module contains the sales flow that IMPORPALAC requires",
-    "author": "Bryan Sandoval",
-    "website": "https://github.com/Fenix-ERP/custom-imporpalac",
-    "category": "Uncategorized",
-    "license": "OPL-1",
+    "category": "Sales/Sales",
     "version": "14.0.1.0.0",
+    "author": "Bryan Sandoval",
+    "company": "Bryan Sandoval / SODI CORP SAS",
+    "website": "https://github.com/Fenix-ERP/custom-imporpalac",
+    "summary": "This module contains the sales flow that IMPORPALAC requires",
     "depends": ["sale", "account"],
     "data": [
         "views/sale_views_inherit.xml",
@@ -13,4 +13,5 @@
         "views/stock_picking_views_inherit.xml",
     ],
     "demo": [],
+    "license": "AGPL-3",
 }

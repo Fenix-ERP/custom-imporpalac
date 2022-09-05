@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class ProductWizard(models.TransientModel):
     _name = "product.wizard"
     _description = "See all Products and warehause"
+
     product_id = fields.Many2one(
         comodel_name="product.product", string="Product", ondelete="cascade"
     )

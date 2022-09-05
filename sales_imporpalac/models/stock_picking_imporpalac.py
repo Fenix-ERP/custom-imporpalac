@@ -4,6 +4,7 @@ from odoo.exceptions import UserError
 
 class StockPicking(models.Model):
     _inherit = "stock.picking"
+
     payment_exist = fields.Boolean(
         default=False, string="There is a payment", compute="_compute_payment_exist"
     )

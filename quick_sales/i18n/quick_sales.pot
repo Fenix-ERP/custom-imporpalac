@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-18 22:28+0000\n"
-"PO-Revision-Date: 2022-07-18 22:28+0000\n"
+"POT-Creation-Date: 2022-09-05 22:25+0000\n"
+"PO-Revision-Date: 2022-09-05 22:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: quick_sales
 #: model:ir.model.fields,field_description:quick_sales.field_sale_order__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: quick_sales
 #: model:ir.model.fields,field_description:quick_sales.field_sale_order__id
@@ -28,26 +28,14 @@ msgstr ""
 #. module: quick_sales
 #: model:ir.model.fields,field_description:quick_sales.field_sale_order____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
-
-#. module: quick_sales
-#: code:addons/quick_sales/models/quick_sales.py:0
-#: code:addons/quick_sales/quick_sales/models/quick_sales.py:0
-#, python-format
-msgid "Quantities are not available for product %s"
-msgstr "Las cantidades no están disponibles para el producto %s"
+msgstr ""
 
 #. module: quick_sales
 #: model_terms:ir.ui.view,arch_db:quick_sales.view_order_form_inherit_quick_sale
 msgid "Quick Confirm"
-msgstr "Confirmación rápida"
-
-#. module: quick_sales
-#: model:res.groups,name:quick_sales.quick_sales
-msgid "Quick sales"
-msgstr "ventas rapidas"
+msgstr ""
 
 #. module: quick_sales
 #: model:ir.model,name:quick_sales.model_sale_order
 msgid "Sales Order"
-msgstr "Pedido de venta"
+msgstr ""

@@ -4,6 +4,7 @@ from odoo.exceptions import UserError
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
+
     payment_ids = fields.One2many(
         comodel_name="account.payment", inverse_name="sale_order_id", string="Payments"
     )

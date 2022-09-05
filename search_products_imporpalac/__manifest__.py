@@ -1,14 +1,14 @@
 {
     "name": "Search Products Imporpalac",
+    "category": "Sales/Sales",
+    "version": "14.0.1.0.0",
+    "author": "Bryan Sandoval",
+    "company": "Bryan Sandoval / SODI CORP SAS",
+    "website": "https://github.com/Fenix-ERP/custom-imporpalac",
     "summary": """
     Assistant to show the products, their warehouses,
     available quantities and price list if they have one.
     """,
-    "author": "Bryan Sandoval",
-    "website": "https://github.com/Fenix-ERP/custom-imporpalac",
-    "category": "Uncategorized",
-    "license": "OPL-1",
-    "version": "14.0.1.0.0",
     "depends": ["sale", "price_list_imporpalac"],
     "data": [
         "security/ir.model.access.csv",
@@ -16,4 +16,5 @@
         "wizard/products_wizard_views.xml",
     ],
     "demo": [],
+    "license": "AGPL-3",
 }
