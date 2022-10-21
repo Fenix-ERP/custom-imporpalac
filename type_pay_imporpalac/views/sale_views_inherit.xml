@@ -7,10 +7,10 @@
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="payment_method"/>
+                    <field name="payment_method" />
                 </xpath>
                 <xpath expr="//field[@name='amount_tax']" position="after">
-                    <field 
+                    <field
                         name="tax_credit_card"
                         attrs="{
                             'invisible': [('payment_method', '!=', 'credit_card')],
