@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* type_pay_imporpalac
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-21 16:15+0000\n"
+"PO-Revision-Date: 2022-10-21 16:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields.selection,name:type_pay_imporpalac.selection__sale_order__payment_method__cash
+msgid "Cash"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields.selection,name:type_pay_imporpalac.selection__sale_order__payment_method__check
+msgid "Check"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model,name:type_pay_imporpalac.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields.selection,name:type_pay_imporpalac.selection__sale_order__payment_method__credit_card
+msgid "Credit card"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_res_config_settings__tax_credit_card
+msgid "Credit card tax"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields.selection,name:type_pay_imporpalac.selection__sale_order__payment_method__debit_card
+msgid "Debit card"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields.selection,name:type_pay_imporpalac.selection__sale_order__payment_method__deposit
+msgid "Deposit"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,help:type_pay_imporpalac.field_res_config_settings__tax_credit_card
+msgid "Extra fee for credit card payment"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_res_config_settings__id
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_sale_order__payment_method
+msgid "Payment method"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model,name:type_pay_imporpalac.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: type_pay_imporpalac
+#: model:ir.model.fields,field_description:type_pay_imporpalac.field_sale_order__tax_credit_card
+#: model_terms:ir.ui.view,arch_db:type_pay_imporpalac.sale_res_config_settings_view_form_inherit
+msgid "Tax credit card"
+msgstr ""

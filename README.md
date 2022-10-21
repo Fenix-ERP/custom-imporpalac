@@ -27,6 +27,7 @@ addon | version | maintainers | summary
 [receipt_product_imporpalac](receipt_product_imporpalac/) | 14.0.1.0.0 |  | Extra column in the receipt of products in which the sale price can be updated
 [sales_imporpalac](sales_imporpalac/) | 14.0.1.0.0 |  | This module contains the sales flow that IMPORPALAC requires
 [search_products_imporpalac](search_products_imporpalac/) | 14.0.1.0.0 |  | Assistant to show the products, their warehouses, available quantities and price list if they have one.
+[type_pay_imporpalac](type_pay_imporpalac/) | 14.0.1.0.0 |  | This module allows to add the type of payment in the quote
 
 [//]: # (end addons)
 
