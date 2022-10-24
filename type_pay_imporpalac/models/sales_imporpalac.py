@@ -40,3 +40,12 @@ class SaleOrder(models.Model):
             else:
                 self.tax_credit_card = 0.00
         return res
+
+
+class AccountMove(models.Model):
+    _inherit = 'account.move'
+
+    tax_credit_card = fields.Monetary(
+        string="Tax credit card", store=True, readonly=True
+    )
+
