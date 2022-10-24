@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="type_payment_action">
+            <field name="name">Type paymet</field>
+            <field name="res_model">type.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    can you create the first type payment
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_type_payment"
+            name="Type payment"
+            parent="sale.menu_sale_config"
+            action="type_payment_action"
+            sequence="10"
+        />
+    </data>
+</odoo>

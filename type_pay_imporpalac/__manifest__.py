@@ -10,6 +10,9 @@
     "data": [
         "views/sale_views_inherit.xml",
         "views/res_config_settings_views.xml",
+        "views/type_payment_view.xml",
+        "security/ir.model.access.csv",
+        "views/type_payment_menuitem.xml",
     ],
     "demo": [],
     "license": "AGPL-3",

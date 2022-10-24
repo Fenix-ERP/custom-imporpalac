@@ -4,19 +4,14 @@ from odoo import api, fields, models
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    payment_method = fields.Selection(
+    payment_method = fields.Many2one(
+        comodel_name="type.payment",
         string="Payment method",
-        selection=[
-            ("cash", "Cash"),
-            ("check", "Check"),
-            ("deposit", "Deposit"),
-            ("credit_card", "Credit card"),
-            ("debit_card", "Debit card"),
-        ],
-        default="cash",
+        ondelete='cascade',
         readonly=True,
         states={"draft": [("readonly", False)], "sent": [("readonly", False)]},
     )
+
     tax_credit_card = fields.Monetary(
         string="Tax credit card", store=True, readonly=True
     )
@@ -29,7 +24,7 @@ class SaleOrder(models.Model):
     def _amount_all(self):
         res = super()._amount_all()
         for order in self:
-            if self.payment_method == "credit_card":
+            if self.payment_method.apply_tax_credit_card:
                 percent_tax_credit_card = (
                     self.env["ir.config_parameter"].sudo().get_param("tax_credit_card")
                 )
