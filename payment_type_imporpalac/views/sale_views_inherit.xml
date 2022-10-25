@@ -10,8 +10,12 @@
                     <field name="payment_method" />
                 </xpath>
                 <xpath expr="//field[@name='amount_tax']" position="after">
+                    <field name="apply_tax" invisible="1"/>
                     <field
                         name="tax_credit_card"
+                        attrs="{
+                            'invisible': [('apply_tax', '=', False)],
+                        }"
                     />
                 </xpath>
             </field>
