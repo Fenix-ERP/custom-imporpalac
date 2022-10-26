@@ -13,6 +13,7 @@
         "security/ir.model.access.csv",
         "views/payment_type_menuitem.xml",
         "views/account_move_views_inherit.xml",
+        "report/report_invoice_template.xml",
     ],
     "demo": [],
     "license": "AGPL-3",
