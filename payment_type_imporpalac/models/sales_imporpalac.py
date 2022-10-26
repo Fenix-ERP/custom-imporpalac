@@ -45,6 +45,7 @@ class SaleOrder(models.Model):
     
     def _prepare_invoice(self):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        invoice_vals['payment_method'] = self.payment_method
         invoice_vals['apply_tax'] = self.apply_tax
         invoice_vals['tax_credit_card'] = self.tax_credit_card
         return invoice_vals
@@ -53,6 +54,13 @@ class SaleOrder(models.Model):
 class AccountMove(models.Model):
     _inherit = 'account.move'   
 
+    payment_method = fields.Many2one(
+        comodel_name="payment.type",
+        string="Payment method",
+        ondelete='cascade',
+        readonly=True,
+        states={"draft": [("readonly", False)], "sent": [("readonly", False)]},
+    )
     apply_tax  = fields.Boolean(
         string="Apply Tax", 
         help="Apply tax to the form of payment", 
@@ -61,6 +69,43 @@ class AccountMove(models.Model):
     tax_credit_card = fields.Monetary(
         string="Tax credit card", store=True, readonly=True
     )
+
+    # def _recompute_dynamic_lines(self, recompute_all_taxes=False, recompute_tax_base_amount=False):
+    #     res = super()._recompute_dynamic_lines()
+    #     print("ahumentando los diarios")
+    #     return res
+
+    # def _move_autocomplete_invoice_lines_create(self, vals_list):
+    #     res = super()._move_autocomplete_invoice_lines_create(vals_list)
+    #     print("ahumentando los diarios")
+    #     return res
+
+    def _recompute_cash_rounding_lines(self):
+        self.ensure_one()
+        if self.apply_tax and self.tax_credit_card > 0:
+            date=self.date
+            currency=self.currency_id
+            company=self.company_id
+            sign = -1
+            amount_currency = self.tax_credit_card * sign
+            balance = currency._convert(amount_currency, company.currency_id, company, date or fields.Date.context_today(self))
+            account = self.payment_method.account_id
+            create_method = self.env['account.move.line'].new or self.env['account.move.line'].create
+            create_method({
+                'name': self.payment_method.name or '',
+                'debit': balance > 0.0 and balance or 0.0,
+                'credit': balance < 0.0 and -balance or 0.0,
+                'quantity': 1.0,
+                'amount_currency': amount_currency,
+                'move_id': self.id,
+                'currency_id': self.currency_id.id,
+                'account_id': account.id,
+                'partner_id': self.commercial_partner_id.id,
+                'exclude_from_invoice_tab': True,
+            })
+        res = super()._recompute_cash_rounding_lines()
+        return res
+
 
     def _compute_amount(self):
         res = super()._compute_amount()

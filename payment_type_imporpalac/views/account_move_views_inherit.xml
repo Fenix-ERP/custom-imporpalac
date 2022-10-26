@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='country_code']" position="after">
-                    <field name="apply_tax"/>
+                    <field name="apply_tax" invisible="1"/>
                 </xpath>
                 <xpath expr="//field[@name='amount_by_group']" position="after">
                     <field
