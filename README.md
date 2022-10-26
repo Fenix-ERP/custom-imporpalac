@@ -22,12 +22,12 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [inventory_turnover_report](inventory_turnover_report/) | 14.0.1.0.0 |  | Analize inventory turnover
+[payment_type_imporpalac](payment_type_imporpalac/) | 14.0.1.0.0 |  | This module allows to add the payment type in the quote
 [price_list_imporpalac](price_list_imporpalac/) | 14.0.1.0.0 |  | This module add price list for each order line
 [quick_sales](quick_sales/) | 14.0.1.0.0 |  | Quick sales for counter sales
 [receipt_product_imporpalac](receipt_product_imporpalac/) | 14.0.1.0.0 |  | Extra column in the receipt of products in which the sale price can be updated
 [sales_imporpalac](sales_imporpalac/) | 14.0.1.0.0 |  | This module contains the sales flow that IMPORPALAC requires
 [search_products_imporpalac](search_products_imporpalac/) | 14.0.1.0.0 |  | Assistant to show the products, their warehouses, available quantities and price list if they have one.
-[type_pay_imporpalac](type_pay_imporpalac/) | 14.0.1.0.0 |  | This module allows to add the type of payment in the quote
 
 [//]: # (end addons)
 

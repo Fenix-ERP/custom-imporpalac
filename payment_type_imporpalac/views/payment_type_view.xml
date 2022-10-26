@@ -14,17 +14,18 @@
                         </div>
                         <group>
                             <group>
-                                <field name="company_id"/>
+                                <field name="company_id" />
                                 <field name="apply_tax" />
                             </group>
                             <group
                                 attrs="{'invisible': [
                                     ('apply_tax', '=', False),
-                                ]}"                            
-                            >   
-                                <label for="tax_percentage"/>
+                                ]}"
+                            >
+                                <label for="tax_percentage" />
                                 <div class="o_row">
-                                    <field name="tax_percentage" 
+                                    <field
+                                        name="tax_percentage"
                                         attrs="{
                                             'invisible': [('apply_tax', '=', False)],
                                             'required': [('apply_tax', '=', True)]
@@ -32,8 +33,9 @@
                                     />
                                     <span>%%</span>
                                 </div>
-                                
-                                <field name="account_id" 
+
+                                <field
+                                    name="account_id"
                                     attrs="{
                                         'invisible': [('apply_tax', '=', False)],
                                         'required': [('apply_tax', '=', True)]
@@ -60,7 +62,7 @@
             <field name="model">payment.type</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name"/>
+                    <field name="name" />
                 </search>
             </field>
         </record>
