@@ -15,7 +15,7 @@ class SaleOrder(models.Model):
         string="Apply Tax", help="Apply tax to the form of payment", default=False
     )
     tax_credit_card = fields.Monetary(
-        string="Tax credit card", store=True, readonly=True
+        string="Tax by payment method", store=True, readonly=True
     )
 
     @api.onchange("payment_method")
@@ -63,7 +63,7 @@ class AccountMove(models.Model):
         string="Apply Tax", help="Apply tax to the form of payment", default=False
     )
     tax_credit_card = fields.Monetary(
-        string="Tax credit card", store=True, readonly=True
+        string="Tax by payment method", store=True, readonly=True
     )
 
     def _recompute_cash_rounding_lines(self):
