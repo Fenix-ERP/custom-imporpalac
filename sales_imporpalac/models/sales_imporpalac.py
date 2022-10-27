@@ -40,7 +40,7 @@ class SaleOrder(models.Model):
                     )
 
     def create_payment(self):
-        journal = self.env["account.journal"].search([("type", "=", "cash")])
+        journal = self.env["account.journal"].search([("type", "=", "cash")], limit=1)
         for order in self:
             self.env["account.payment"].create(
                 {
