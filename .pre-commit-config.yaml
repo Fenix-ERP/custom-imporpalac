@@ -15,7 +15,7 @@ exclude: |
   # You don't usually want a bot to modify your legal texts
   (LICENSE.*|COPYING.*)
 default_language_version:
-  python: python3
+  python: python3.8.10
   node: "14.13.0"
 repos:
   - repo: local
@@ -107,7 +107,7 @@ repos:
     rev: 2.6.0
     hooks:
       - id: setuptools-odoo-make-default
-  - repo: https://gitlab.com/PyCQA/flake8
+  - repo: https://github.com/PyCQA/flake8
     rev: 3.8.3
     hooks:
       - id: flake8
