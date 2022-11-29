@@ -31,6 +31,19 @@ class ProductWizard(models.TransientModel):
         default=0.0,
         group_operator=False,
     )
+    show_price_with_vat = fields.Boolean(
+        string="Show price with vat",
+        default=lambda self: self.env["ir.config_parameter"]
+        .sudo()
+        .get_param("sale.show_price_with_vat"),
+    )
+    price_unit_with_vat = fields.Float(
+        string="Unit price with Vat",
+        required=True,
+        digits="Product Price",
+        default=0.0,
+        group_operator=False,
+    )
     sale_order_warehouse_id = fields.Many2one(
         comodel_name="stock.warehouse",
         string="Sale order Warehouse",
@@ -55,3 +68,10 @@ class ProductWizard(models.TransientModel):
             pricelist=self.pricelist_id.id,
         )
         self.price_unit = product.price
+        self.price_unit_with_vat = self.price_unit
+        for tax in product.taxes_id:
+            if "IVA" in tax.name:
+                amount_iva = (tax.amount/100)*product.price
+                self.price_unit_with_vat += amount_iva
+            break
+    

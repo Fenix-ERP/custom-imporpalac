@@ -27,7 +27,12 @@
                     <field name="warehouse_id" readonly="1" />
                     <field name="location_id" readonly="1" />
                     <field name="available_quantity" readonly="1" />
-                    <field name="price_unit" />
+                    <field name="price_unit"/>
+                    <field name="show_price_with_vat" invisible="True"/>
+                    <field 
+                        name="price_unit_with_vat"
+                        attrs="{'invisible': [('show_price_with_vat', '=', False)]}"
+                    />
                     <field
                         name="pricelist_domain_ids"
                         widget="many2many_tags"

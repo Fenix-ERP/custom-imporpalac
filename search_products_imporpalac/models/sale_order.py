@@ -33,6 +33,12 @@ class SaleOrder(models.Model):
                         [("lot_stock_id", "=", location.id)]
                     )
                     product = self.product_data(stock.product_id)
+                    price_unit_with_vat = product.price
+                    for tax in product.taxes_id:
+                        if "IVA" in tax.name:
+                            amount_iva = (tax.amount/100)*product.price
+                            price_unit_with_vat += amount_iva
+                        break
                     pricelist_items = self.env["product.pricelist.item"].search(
                         [
                             ("|"),
@@ -57,6 +63,7 @@ class SaleOrder(models.Model):
                             "available_quantity": stock.available_quantity,
                             "pricelist_id": self.pricelist_id.id,
                             "price_unit": product.price,
+                            "price_unit_with_vat": price_unit_with_vat,
                             "pricelist_domain_ids": [(6, 0, pricelist.ids)],
                             "sale_order_warehouse_id": self.warehouse_id.id,
                             "date_order": self.date_order,
