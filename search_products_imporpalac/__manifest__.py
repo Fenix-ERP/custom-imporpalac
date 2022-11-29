@@ -14,6 +14,7 @@
         "security/ir.model.access.csv",
         "views/sale_views_inherit.xml",
         "wizard/products_wizard_views.xml",
+        "views/res_config_settings_views.xml",
     ],
     "demo": [],
     "license": "AGPL-3",

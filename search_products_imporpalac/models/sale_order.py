@@ -1,10 +1,17 @@
-from odoo import _, models
+from odoo import _,fields, models
 from odoo.exceptions import UserError
 from odoo.tools.misc import get_lang
 
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
+
+    active_search_button = fields.Boolean(
+        string="Active search button",
+        default=lambda self: self.env["ir.config_parameter"]
+        .sudo()
+        .get_param("sale.active_search_button"),
+    )
 
     # Open product wizard and query data
     def action_open_wizard(self):

@@ -6,13 +6,20 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='sale_order_template_id']" position="before">
+                    <field name="active_search_button" invisible="1" />
+                </xpath>
                 <xpath expr="//button[@name='action_confirm']" position="after">
                     <button
                         name="action_open_wizard"
                         type="object"
                         string="Search Products"
                         class="btn-primary"
-                        attrs="{'invisible': [('state', 'not in', ['draft'])]}"
+                        attrs="{'invisible': [
+                            '|',
+                            ('state', 'not in', ['draft']),
+                            ('active_search_button','=', False)]
+                        }"
                     />
                 </xpath>
             </field>
