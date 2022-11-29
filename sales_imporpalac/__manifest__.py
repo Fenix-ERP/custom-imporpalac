@@ -11,6 +11,7 @@
         "views/sale_views_inherit.xml",
         "report/payment_sales_order_report_templates.xml",
         "views/stock_picking_views_inherit.xml",
+        "views/res_config_settings_views.xml",
     ],
     "demo": [],
     "license": "AGPL-3",
