@@ -16,7 +16,7 @@
                             <field name="active_quick_sale" />
                         </div>
                         <div class="o_setting_right_pane">
-                            <label for="active_quick_sale"/>
+                            <label for="active_quick_sale" />
                             <div class="text-muted">
                                 Establish a button to make quick sales by linking the payment to the invoice in a summary way
                             </div>

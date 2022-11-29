@@ -1,4 +1,4 @@
-from odoo import _,fields, models
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 from odoo.tools.misc import get_lang
 
@@ -36,7 +36,7 @@ class SaleOrder(models.Model):
                     price_unit_with_vat = product.price
                     for tax in product.taxes_id:
                         if "IVA" in tax.name:
-                            amount_iva = (tax.amount/100)*product.price
+                            amount_iva = (tax.amount / 100) * product.price
                             price_unit_with_vat += amount_iva
                         break
                     pricelist_items = self.env["product.pricelist.item"].search(

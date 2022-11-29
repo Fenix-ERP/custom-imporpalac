@@ -28,7 +28,9 @@ class ResConfigSettings(models.TransientModel):
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
         res["active_search_button"] = (
-            self.env["ir.config_parameter"].sudo().get_param("sale.active_search_button")
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("sale.active_search_button")
         )
         res["show_price_with_vat"] = (
             self.env["ir.config_parameter"].sudo().get_param("sale.show_price_with_vat")

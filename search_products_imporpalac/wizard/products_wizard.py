@@ -71,7 +71,6 @@ class ProductWizard(models.TransientModel):
         self.price_unit_with_vat = self.price_unit
         for tax in product.taxes_id:
             if "IVA" in tax.name:
-                amount_iva = (tax.amount/100)*product.price
+                amount_iva = (tax.amount / 100) * product.price
                 self.price_unit_with_vat += amount_iva
             break
-    
