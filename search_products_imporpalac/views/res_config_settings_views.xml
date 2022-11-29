@@ -17,14 +17,19 @@
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="active_search_button"/>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 o_setting_box" id="config_button_search">
-                        <div class="o_setting_left_pane">
-                            <field name="show_price_with_vat"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="show_price_with_vat"/>
+                            <div class="text-muted">
+                                Establishes a product view with its price list and warehouses
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('active_search_button' ,'=', False)]}">
+                                <div class="mt16">
+                                    <div class="o_setting_left_pane">
+                                        <field name="show_price_with_vat"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="show_price_with_vat"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </xpath>
