@@ -5,7 +5,7 @@ class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     active_quick_sale = fields.Boolean(
-        string="Active quick sale",
+        string="Quick sale",
         help="Activate the quick sales button",
         config_parameter="sale.active_quick_sale",
     )
