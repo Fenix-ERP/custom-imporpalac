@@ -9,7 +9,8 @@ class ProductWizard(models.TransientModel):
         comodel_name="product.product", string="Product", ondelete="cascade"
     )
     barcode = fields.Char(
-        string="Barcode", related="product_id.barcode",
+        string="Barcode",
+        related="product_id.barcode",
     )
     warehouse_id = fields.Many2one(
         comodel_name="stock.warehouse", string="Warehouse", ondelete="cascade"
