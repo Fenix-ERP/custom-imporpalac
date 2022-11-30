@@ -11,7 +11,16 @@ class SaleOrder(models.Model):
         default=lambda self: self.env["ir.config_parameter"]
         .sudo()
         .get_param("sale.active_search_button"),
+        compute="_compute_active_search_button"
     )
+
+    def _compute_active_search_button(self):
+        for record in self:
+            record.active_search_button = (
+                self.env["ir.config_parameter"]
+                .sudo()
+                .get_param("sale.active_search_button")
+            )
 
     # Open product wizard and query data
     def action_open_wizard(self):
