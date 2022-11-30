@@ -16,7 +16,7 @@ class SaleOrder(models.Model):
         default=lambda self: self.env["ir.config_parameter"]
         .sudo()
         .get_param("sale.active_quick_sale"),
-        compute="_compute_active_quick_sale"
+        compute="_compute_active_quick_sale",
     )
 
     def _compute_active_quick_sale(self):

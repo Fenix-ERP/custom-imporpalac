@@ -29,7 +29,7 @@
                     <field name="available_quantity" readonly="1" />
                     <field
                         name="price_unit"
-                        invisible="context.get('not_show_price_with_vat') == False " 
+                        invisible="context.get('not_show_price_with_vat') == False "
                     />
                     <field
                         name="price_unit_with_vat"

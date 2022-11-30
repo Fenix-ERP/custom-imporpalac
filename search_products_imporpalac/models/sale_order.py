@@ -11,7 +11,7 @@ class SaleOrder(models.Model):
         default=lambda self: self.env["ir.config_parameter"]
         .sudo()
         .get_param("sale.active_search_button"),
-        compute="_compute_active_search_button"
+        compute="_compute_active_search_button",
     )
 
     def _compute_active_search_button(self):
@@ -35,9 +35,7 @@ class SaleOrder(models.Model):
             ]
         )
         show_price_with_vat = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("sale.show_price_with_vat")
+            self.env["ir.config_parameter"].sudo().get_param("sale.show_price_with_vat")
         )
         for location in locations:
             if location.quant_ids:  # (current stock)
@@ -88,10 +86,10 @@ class SaleOrder(models.Model):
             "res_model": "product.wizard",
             "type": "ir.actions.act_window",
             "context": {
-                "order_id": self.id, 
-                "group_by": "product_id", 
-                "show_price_with_vat":show_price_with_vat,
-                "not_show_price_with_vat":not show_price_with_vat
+                "order_id": self.id,
+                "group_by": "product_id",
+                "show_price_with_vat": show_price_with_vat,
+                "not_show_price_with_vat": not show_price_with_vat,
             },
             "target": "new",
         }
