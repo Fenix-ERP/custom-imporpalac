@@ -27,7 +27,9 @@
                     <field name="warehouse_id" readonly="1" />
                     <field name="location_id" readonly="1" />
                     <field name="available_quantity" readonly="1" />
-                    <field name="price_unit" />
+                    <field name="price_unit" 
+                        attrs="{'invisible': [('show_price_with_vat', '=', True)]}"
+                    />
                     <field name="show_price_with_vat" invisible="True" />
                     <field
                         name="price_unit_with_vat"

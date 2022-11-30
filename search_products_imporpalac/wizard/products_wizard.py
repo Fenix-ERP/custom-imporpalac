@@ -28,7 +28,7 @@ class ProductWizard(models.TransientModel):
     )
     pricelist_id = fields.Many2one(comodel_name="product.pricelist", string="Pricelist")
     price_unit = fields.Float(
-        string="Unit Price",
+        string="Price",
         required=True,
         digits="Product Price",
         default=0.0,
@@ -41,7 +41,7 @@ class ProductWizard(models.TransientModel):
         .get_param("sale.show_price_with_vat"),
     )
     price_unit_with_vat = fields.Float(
-        string="Unit price with Vat",
+        string="Price with Vat",
         required=True,
         digits="Product Price",
         default=0.0,

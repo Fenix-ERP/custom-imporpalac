@@ -17,7 +17,6 @@ class SaleOrder(models.Model):
     def action_open_wizard(self):
         # clean model product wizard
         self.env["product.wizard"].search([]).unlink()
-
         # query data
         locations = self.env["stock.location"].search(
             [
