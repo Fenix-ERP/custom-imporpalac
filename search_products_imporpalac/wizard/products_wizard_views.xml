@@ -51,9 +51,10 @@
             <field name="model">product.wizard</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="product_id" />
-                    <field name="warehouse_id" />
-                    <field name="location_id" />
+                    <field name="product_id"/>
+                    <field name="barcode"/>
+                    <field name="warehouse_id"/>
+                    <field name="location_id"/>
                     <group expand="0" string="Group By">
                         <filter
                             string="Warehause"
