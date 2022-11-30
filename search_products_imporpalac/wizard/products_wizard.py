@@ -35,12 +35,6 @@ class ProductWizard(models.TransientModel):
         default=0.0,
         group_operator=False,
     )
-    show_price_with_vat = fields.Boolean(
-        string="Show price with vat",
-        default=lambda self: self.env["ir.config_parameter"]
-        .sudo()
-        .get_param("sale.show_price_with_vat"),
-    )
     price_unit_with_vat = fields.Float(
         string="Price with Vat",
         required=True,

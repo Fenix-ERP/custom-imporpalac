@@ -29,12 +29,11 @@
                     <field name="available_quantity" readonly="1" />
                     <field
                         name="price_unit"
-                        attrs="{'invisible': [('show_price_with_vat', '=', True)]}"
+                        invisible="context.get('not_show_price_with_vat') == False " 
                     />
-                    <field name="show_price_with_vat" invisible="True" />
                     <field
                         name="price_unit_with_vat"
-                        attrs="{'invisible': [('show_price_with_vat', '=', False)]}"
+                        invisible="context.get('show_price_with_vat') == False "
                     />
                     <field
                         name="pricelist_domain_ids"

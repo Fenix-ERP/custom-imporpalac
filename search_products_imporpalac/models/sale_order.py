@@ -25,6 +25,11 @@ class SaleOrder(models.Model):
                 ("return_location", "=", False),
             ]
         )
+        show_price_with_vat = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("sale.show_price_with_vat")
+        )
         for location in locations:
             if location.quant_ids:  # (current stock)
                 for stock in location.quant_ids:
@@ -73,7 +78,12 @@ class SaleOrder(models.Model):
             "view_mode": "tree",
             "res_model": "product.wizard",
             "type": "ir.actions.act_window",
-            "context": {"order_id": self.id, "group_by": "product_id"},
+            "context": {
+                "order_id": self.id, 
+                "group_by": "product_id", 
+                "show_price_with_vat":show_price_with_vat,
+                "not_show_price_with_vat":not show_price_with_vat
+            },
             "target": "new",
         }
 
