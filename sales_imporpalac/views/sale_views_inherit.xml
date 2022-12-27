@@ -6,12 +6,19 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='sale_order_template_id']" position="before">
+                    <field name="active_quick_sale" invisible="1" />
+                </xpath>
                 <xpath expr="//button[@name='action_confirm']" position="after">
                     <button
                         name="action_confirm_pay_order"
                         type="object"
                         string="Confirm and generate payment"
-                        attrs="{'invisible': [('state', 'not in', ['draft'])]}"
+                        attrs="{'invisible': [
+                            '|',
+                            ('state', 'not in', ['draft']),
+                            ('active_quick_sale','=', False)]
+                        }"
                     />
                 </xpath>
                 <xpath expr="//button[@name='action_view_invoice']" position="after">
@@ -31,6 +38,7 @@
                         />
                     </button>
                 </xpath>
+
             </field>
         </record>
     </data>

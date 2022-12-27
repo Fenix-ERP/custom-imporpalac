@@ -1,4 +1,4 @@
-from odoo import _, models
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 from odoo.tools.misc import get_lang
 
@@ -6,11 +6,26 @@ from odoo.tools.misc import get_lang
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+    active_search_button = fields.Boolean(
+        string="Active search button",
+        default=lambda self: self.env["ir.config_parameter"]
+        .sudo()
+        .get_param("sale.active_search_button"),
+        compute="_compute_active_search_button",
+    )
+
+    def _compute_active_search_button(self):
+        for record in self:
+            record.active_search_button = (
+                self.env["ir.config_parameter"]
+                .sudo()
+                .get_param("sale.active_search_button")
+            )
+
     # Open product wizard and query data
     def action_open_wizard(self):
         # clean model product wizard
         self.env["product.wizard"].search([]).unlink()
-
         # query data
         locations = self.env["stock.location"].search(
             [
@@ -19,6 +34,9 @@ class SaleOrder(models.Model):
                 ("return_location", "=", False),
             ]
         )
+        show_price_with_vat = (
+            self.env["ir.config_parameter"].sudo().get_param("sale.show_price_with_vat")
+        )
         for location in locations:
             if location.quant_ids:  # (current stock)
                 for stock in location.quant_ids:
@@ -26,6 +44,12 @@ class SaleOrder(models.Model):
                         [("lot_stock_id", "=", location.id)]
                     )
                     product = self.product_data(stock.product_id)
+                    price_unit_with_vat = product.price
+                    for tax in product.taxes_id:
+                        if "IVA" in tax.name:
+                            amount_iva = (tax.amount / 100) * product.price
+                            price_unit_with_vat += amount_iva
+                        break
                     pricelist_items = self.env["product.pricelist.item"].search(
                         [
                             ("|"),
@@ -50,6 +74,7 @@ class SaleOrder(models.Model):
                             "available_quantity": stock.available_quantity,
                             "pricelist_id": self.pricelist_id.id,
                             "price_unit": product.price,
+                            "price_unit_with_vat": price_unit_with_vat,
                             "pricelist_domain_ids": [(6, 0, pricelist.ids)],
                             "sale_order_warehouse_id": self.warehouse_id.id,
                             "date_order": self.date_order,
@@ -60,7 +85,12 @@ class SaleOrder(models.Model):
             "view_mode": "tree",
             "res_model": "product.wizard",
             "type": "ir.actions.act_window",
-            "context": {"order_id": self.id, "group_by": "product_id"},
+            "context": {
+                "order_id": self.id,
+                "group_by": "product_id",
+                "show_price_with_vat": show_price_with_vat,
+                "not_show_price_with_vat": not show_price_with_vat,
+            },
             "target": "new",
         }
 

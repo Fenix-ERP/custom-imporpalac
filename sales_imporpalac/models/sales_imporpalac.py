@@ -11,6 +11,21 @@ class SaleOrder(models.Model):
     payment_count = fields.Integer(
         string="Payments Orders", compute="_compute_payment_ids"
     )
+    active_quick_sale = fields.Boolean(
+        string="Active quick sales",
+        default=lambda self: self.env["ir.config_parameter"]
+        .sudo()
+        .get_param("sale.active_quick_sale"),
+        compute="_compute_active_quick_sale",
+    )
+
+    def _compute_active_quick_sale(self):
+        for record in self:
+            record.active_quick_sale = (
+                self.env["ir.config_parameter"]
+                .sudo()
+                .get_param("sale.active_quick_sale")
+            )
 
     def action_confirm_pay_order(self):
         # confirm sales order

@@ -8,6 +8,10 @@ class ProductWizard(models.TransientModel):
     product_id = fields.Many2one(
         comodel_name="product.product", string="Product", ondelete="cascade"
     )
+    barcode = fields.Char(
+        string="Barcode",
+        related="product_id.barcode",
+    )
     warehouse_id = fields.Many2one(
         comodel_name="stock.warehouse", string="Warehouse", ondelete="cascade"
     )
@@ -25,7 +29,14 @@ class ProductWizard(models.TransientModel):
     )
     pricelist_id = fields.Many2one(comodel_name="product.pricelist", string="Pricelist")
     price_unit = fields.Float(
-        string="Unit Price",
+        string="Price",
+        required=True,
+        digits="Product Price",
+        default=0.0,
+        group_operator=False,
+    )
+    price_unit_with_vat = fields.Float(
+        string="Price with Vat",
         required=True,
         digits="Product Price",
         default=0.0,
@@ -55,3 +66,9 @@ class ProductWizard(models.TransientModel):
             pricelist=self.pricelist_id.id,
         )
         self.price_unit = product.price
+        self.price_unit_with_vat = self.price_unit
+        for tax in product.taxes_id:
+            if "IVA" in tax.name:
+                amount_iva = (tax.amount / 100) * product.price
+                self.price_unit_with_vat += amount_iva
+            break
